@@ -25,9 +25,9 @@ function TopBar({ isDarkMode, onToggleDarkMode }) {
         </div>
         
         <div className={`topbar-menu ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className="topbar-link">Home</Link>
-          <Link to="/about" className="topbar-link">About</Link>
-          <Link to="/contact" className="topbar-link">Report a Problem</Link>
+          <Link to="/chatisthisreal/" className="topbar-link">Home</Link>
+          <Link to="/chatisthisreal/about" className="topbar-link">About</Link>
+          <Link to="/chatisthisreal/contact" className="topbar-link">Report a Problem</Link>
           <div className="mode-toggle-container">
             <span className="mode-label">Theme</span>
             <DarkModeToggle isDarkMode={isDarkMode} onToggle={onToggleDarkMode} />
