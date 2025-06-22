@@ -134,6 +134,29 @@ function Home({ isDarkMode, onToggleDarkMode }) {
     setIsDragOver(false);
   };
 
+  const getConfidenceText = (percentage) => {
+    let confidenceLevel = '';
+    let mediaType = '';
+    
+    // Determine confidence level based on percentage ranges
+    if (percentage >= 40 && percentage <= 60) {
+      confidenceLevel = 'Low confidence:';
+    } else if ((percentage >= 25 && percentage < 40) || (percentage > 60 && percentage <= 75)) {
+      confidenceLevel = 'High confidence:';
+    } else if ((percentage >= 0 && percentage < 25) || (percentage > 75 && percentage <= 100)) {
+      confidenceLevel = 'Extremely high confidence:';
+    }
+    
+    // Determine media type based on percentage
+    if (percentage < 50) {
+      mediaType = ' media is AI';
+    } else {
+      mediaType = ' media is human generated';
+    }
+    
+    return confidenceLevel + mediaType;
+  };
+
   return (
     <div className={`page ${isDarkMode ? 'dark-mode' : ''}`}>
       {!previewUrl ? (
@@ -223,6 +246,9 @@ function Home({ isDarkMode, onToggleDarkMode }) {
                   </div>
                   <div className="percentage-display">
                     <span className="percentage-value">{percentage}</span>
+                  </div>
+                  <div className="confidence-text">
+                    <p>{getConfidenceText(percentage)}</p>
                   </div>
                 </div>
               </div>

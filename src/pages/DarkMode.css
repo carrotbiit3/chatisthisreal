@@ -121,6 +121,10 @@
   border: 2px solid #60a5fa;
 }
 
+.page.dark-mode .confidence-text p {
+  color: #60a5fa;
+}
+
 /* Loading Overlay - Dark Mode */
 .page.dark-mode .loading-overlay {
   background: rgba(15, 23, 42, 0.95);

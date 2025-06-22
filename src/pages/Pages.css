@@ -650,6 +650,26 @@
   border: 2px solid #1e3a8a;
 }
 
+.confidence-text {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confidence-text p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1e3a8a;
+  padding: 8px 16px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
 /* Loading Overlay and Spinner Styles */
 .loading-overlay {
   position: absolute;
